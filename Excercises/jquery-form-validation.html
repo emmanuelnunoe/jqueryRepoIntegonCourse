@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="jquery-form-validation.css" type="text/css" />
+    <title>Form Validation</title>
+  </head>
+  <body>
+    <ul id="errores"></ul>
+    <form id="formEjemplo" action="/my-handling-form-page" method="post">
+      <ul>
+        <li>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="user_name" />
+        </li>
+        <li>
+          <label for="mail">E-mail:</label>
+          <input type="email" id="mail" name="user_email" />
+        </li>
+        <li>
+          <label for="msg">Message:</label>
+          <textarea id="msg" name="user_message"></textarea>
+        </li>
+        <li class="button">
+          <button
+            type="button"
+            value="Send"
+            id="btnSubmit"
+            style="margin-left: 19%"
+          >
+            Send your Message
+          </button>
+        </li>
+      </ul>
+    </form>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      $(() => {
+        let errores = [];
+        $('#btnSubmit').click(function (event) {
+          validaCampos();
+          event.preventDefault();
+        });
+
+        function validaCampos() {
+          errores = [];
+          $('#formEjemplo input, #formEjemplo textarea').each(function () {
+            if (!$(this).val()) agregaError($(this).attr('name'));
+          });
+
+          let name = $('#name').val();
+          let mail = $('#mail').val();
+          let msg = $('#msg').val();
+
+          $('#errores').empty();
+          errores.forEach((errorText) => {
+            let newError = `<li class="error">${errorText}</li>`;
+            $('#errores').append(newError);
+          });
+
+          if (errores.lenght == 0) alert('Mensaje enviado');
+          $('.error').css({ color: 'red', 'background-color': 'yellow' });
+        }
+
+        function agregaError(campo) {
+          errores.push(`Agrega el campo ${campo}`);
+        }
+      });
+    </script>
+  </body>
+</html>

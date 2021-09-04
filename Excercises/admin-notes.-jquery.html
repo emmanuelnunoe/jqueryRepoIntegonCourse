@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <title>Notes</title>
+  </head>
+  <body>
+    <div class="container container-fluid">
+      <div class="row row-cols-auto">
+        <div class="col">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">titulo</span>
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Titulo"
+              aria-label="titulo"
+              aria-describedby="basic-addon1"
+              id="titulo"
+            />
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">contenido</span>
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="contenido"
+              aria-label="contenido"
+              aria-describedby="basic-addon1"
+              id="contenido"
+            />
+          </div>
+
+          <button
+            type="button"
+            id="createNote"
+            value="CrearNota"
+            class="btn btn-primary mb-5"
+          >
+            Crear Nota
+          </button>
+          
+          <button
+            type="button"
+            id="updateNote"
+            value="CrearNota"
+            class="btn btn-primary mb-5"
+            
+          >
+            Update
+          </button>
+          </div>
+
+          <div class="col" id="notas-container"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="admin-notes-jquery.js"></script>
+  </body>
+</html>

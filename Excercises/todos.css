@@ -1,0 +1,16 @@
+.todo-completed {
+  color: green;
+}
+
+.todo-incompleted {
+  color: rgb(205, 112, 50);
+}
+
+.title {
+  font-size: larger;
+  font-weight: bolder;
+}
+
+.Table {
+  border: rgb(205, 112, 50);
+}
